@@ -5,95 +5,109 @@
   --color-blanco-pastel: #fdfbf7;
   --color-crema-suave: #f5f0eb;
   --color-dorado-tierra: #c7a75c;
+  --radio-borde: 10px;
 }
 
 body {
   font-family: "Trebuchet MS", "Segoe UI", "Gill Sans", Verdana, sans-serif;
-  background-color: var(--color-blanco-pastel);
-  color: var(--color-marron-oscuro);
+  font-weight: bold;
+  background-color: var(--color-marron-acento);
+  color: var(--color-blanco-pastel);
   line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .contenedor {
   width: 90%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 0 15px;
 }
 
-.encabezado-pagina {
-  background-color: var(--color-marron-oscuro);
-  color: var(--color-blanco-pastel);
+.seccion-banner-panoramas {
+  position: relative;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 120px;
+  padding-bottom: 50px;
+}
+
+.imagen-fondo-banner,
+.capa-banner {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.imagen-fondo-banner {
+  object-fit: cover;
+  z-index: 1;
+}
+
+.capa-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65));
+  z-index: 2;
+}
+
+.contenido-banner {
+  position: relative;
+  z-index: 3;
   text-align: center;
-  padding-top: 130px;
-  padding-bottom: 45px;
-  border-bottom: 3px solid var(--color-dorado-tierra);
 }
 
-.encabezado-pagina h1 {
-  font-size: 38px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
+.titulo-banner {
+  font-size: 48px;
+  margin-bottom: 15px;
   color: var(--color-blanco-pastel);
+  letter-spacing: 1px;
 }
 
-.encabezado-pagina p {
-  font-size: 16px;
-  max-width: 650px;
-  margin: 0 auto;
+.subtitulo-banner {
+  font-size: 18px;
+  font-weight: normal;
+  max-width: 700px;
+  margin-inline: auto;
+  line-height: 1.6;
   color: var(--color-crema-suave);
 }
 
 .seccion-panoramas {
-  padding: 50px 0;
+  padding: 60px 0;
 }
 
 .cuadricula-panoramas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
 
 .tarjeta-panorama {
-  background-color: #ffffff;
-  border: 1px solid rgba(93, 64, 55, 0.2);
-  border-radius: 8px;
+  background-color: var(--color-marron-medio);
+  border-radius: var(--radio-borde);
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(62, 39, 35, 0.08);
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.tarjeta-panorama:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(62, 39, 35, 0.15);
-}
-
-.caja-imagen-placeholder {
-  width: 100%;
-  height: 180px;
-  background-color: var(--color-crema-suave);
-  border-bottom: 2px dashed var(--color-marron-acento);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-marron-medio);
-  font-size: 14px;
-  font-weight: bold;
 }
 
 .imagen-panorama {
   width: 100%;
-  height: 180px;
+  height: 210px;
   object-fit: cover;
   display: block;
 }
 
 .contenido-tarjeta {
-  padding: 22px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -101,82 +115,89 @@ body {
 
 .etiqueta-actividad {
   display: inline-block;
-  background-color: var(--color-crema-suave);
-  color: var(--color-marron-medio);
-  font-size: 11px;
-  font-weight: bold;
+  background-color: var(--color-marron-oscuro);
+  color: var(--color-dorado-tierra);
+  font-size: 12px;
   text-transform: uppercase;
-  padding: 4px 8px;
-  border-radius: 4px;
-  margin-bottom: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-bottom: 14px;
   align-self: flex-start;
 }
 
 .contenido-tarjeta h3 {
   font-size: 20px;
-  font-weight: bold;
-  color: var(--color-marron-oscuro);
-  margin-bottom: 10px;
+  color: var(--color-blanco-pastel);
+  margin-bottom: 12px;
 }
 
 .contenido-tarjeta p {
   font-size: 14px;
-  color: #555555;
-  margin-bottom: 15px;
+  font-weight: normal;
+  color: var(--color-crema-suave);
+  margin-bottom: 18px;
   flex-grow: 1;
+  line-height: 1.6;
 }
 
 .datos-actividad {
   font-size: 13px;
-  color: var(--color-marron-medio);
-  background-color: var(--color-crema-suave);
-  padding: 8px 12px;
-  border-radius: 4px;
-  margin-bottom: 15px;
-  font-weight: 500;
-}
-
-.btn-actividad {
-  display: block;
-  text-align: center;
-  background-color: var(--color-dorado-tierra);
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 13px;
-  text-transform: uppercase;
-  padding: 10px;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  letter-spacing: 0.5px;
-  transition: opacity 0.2s ease;
-}
-
-.btn-actividad:hover {
-  opacity: 0.9;
-  color: #ffffff;
-}
-
-.pie-pagina {
-  background-color: var(--color-marron-oscuro);
+  font-weight: normal;
   color: var(--color-crema-suave);
-  text-align: center;
-  padding: 25px 0;
-  font-size: 13px;
-  border-top: 3px solid var(--color-dorado-tierra);
+  background-color: var(--color-marron-oscuro);
+  padding: 10px 14px;
+  border-radius: 6px;
 }
 
-.pie-pagina p {
-  margin: 0;
+.datos-actividad strong {
+  color: var(--color-dorado-tierra);
+}
+
+.fondo-footer {
+  background-color: var(--color-marron-oscuro);
+  text-align: center;
+  padding: 20px 24px;
+}
+
+.parrafo-footer {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--color-blanco-pastel);
+}
+
+.enlace-footer {
+  color: var(--color-blanco-pastel);
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.enlace-footer:hover {
+  color: var(--dorado-tierra);
+  text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+  .cuadricula-panoramas {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-  .encabezado-pagina {
-    padding-top: 110px;
+  .seccion-banner-panoramas {
+    min-height: 350px;
+    padding-top: 120px;
   }
-  
-  .encabezado-pagina h1 {
-    font-size: 28px;
+
+  .titulo-banner {
+    font-size: 32px;
+  }
+
+  .subtitulo-banner {
+    font-size: 15px;
+  }
+
+  .cuadricula-panoramas {
+    grid-template-columns: 1fr;
   }
 }
