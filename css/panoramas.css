@@ -1,9 +1,3 @@
-/* ==========================================================================
-   Destino Cordillera - Hoja de Estilos Propia (panoramas.css)
-   Página: Panoramas y Actividades (Maquetación 100% nativa sin Bootstrap)
-   ========================================================================== */
-
-/* Variables de la identidad visual */
 :root {
   --color-marron-oscuro: #3e2723;
   --color-marron-medio: #5d4037;
@@ -14,7 +8,6 @@
   --radio-borde: 10px;
 }
 
-/* Reseteo básico de márgenes */
 * {
   margin: 0;
   padding: 0;
@@ -36,9 +29,6 @@ h3 {
   text-transform: uppercase;
 }
 
-/* ==========================================================================
-   Barra de Navegación Propia (Flexbox nativo al 100% del ancho)
-   ========================================================================== */
 .barra-navegacion {
   position: absolute;
   top: 0;
@@ -99,9 +89,6 @@ h3 {
   color: #ffffff;
 }
 
-/* ==========================================================================
-   Banner Principal
-   ========================================================================== */
 .seccion-banner-panoramas {
   position: relative;
   min-height: 450px;
@@ -153,9 +140,6 @@ h3 {
   line-height: 1.6;
 }
 
-/* ==========================================================================
-   Sección de Panoramas (CSS Grid)
-   ========================================================================== */
 .seccion-panoramas {
   padding: 60px 0;
 }
@@ -234,9 +218,6 @@ h3 {
   color: var(--color-dorado-tierra);
 }
 
-/* ==========================================================================
-   Pie de Página
-   ========================================================================== */
 .fondo-footer {
   background-color: var(--color-marron-oscuro);
   text-align: center;
@@ -261,9 +242,6 @@ h3 {
   text-decoration: underline;
 }
 
-/* ==========================================================================
-   Adaptabilidad Móvil y Tablet (Media Queries)
-   ========================================================================== */
 @media (max-width: 992px) {
   .cuadricula-panoramas {
     grid-template-columns: repeat(2, 1fr);
