@@ -1,4 +1,3 @@
-
 :root {
   --color-marron-oscuro: #3e2723;
   --color-marron-medio: #5d4037;
@@ -184,4 +183,74 @@ body {
   .descripcion-hero {
     font-size: 16px;
   }
+}
+
+
+.grid-precios{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:9px; 
+    margin-top:12px;
+}
+
+.btn-precio{
+    background:#8B5E3C;
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:11px 9px;    
+    cursor:pointer;
+    font-size:0.8rem;    
+    font-weight:600;
+    line-height:1.2;   
+    transition:0.25s ease;
+}
+
+.btn-precio strong{
+    display:block;
+    margin-top:2px;   
+    font-size:0.9rem;
+}
+
+.btn-precio:hover{
+    background:#A06E47;
+    transform:translateY(-2px);
+    box-shadow:0 6px 12px rgba(0,0,0,.2);
+}
+
+.btn-precio:active{
+    transform:scale(.98);
+}
+
+.btn-precio--grande{
+    grid-column:1/-1;
+}
+
+.precio-restaurante {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #8B5E3C;
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.precio-restaurante span {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.precio-restaurante:hover {
+    background-color: #8B5E3C;
+    transform: translateY(-2px);
 }
