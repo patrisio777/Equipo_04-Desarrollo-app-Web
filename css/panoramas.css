@@ -1,3 +1,9 @@
+/* ==========================================================================
+   Destino Cordillera - Hoja de Estilos Propia (panoramas.css)
+   Página: Panoramas y Actividades (Maquetación 100% nativa sin Bootstrap)
+   ========================================================================== */
+
+/* Variables de la identidad visual */
 :root {
   --color-marron-oscuro: #3e2723;
   --color-marron-medio: #5d4037;
@@ -6,6 +12,13 @@
   --color-crema-suave: #f5f0eb;
   --color-dorado-tierra: #c7a75c;
   --radio-borde: 10px;
+}
+
+/* Reseteo básico de márgenes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -23,13 +36,72 @@ h3 {
   text-transform: uppercase;
 }
 
-.contenedor {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+/* ==========================================================================
+   Barra de Navegación Propia (Flexbox nativo al 100% del ancho)
+   ========================================================================== */
+.barra-navegacion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1030;
+  padding: 18px 0;
 }
 
+.contenedor-nav {
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-navegacion {
+  display: flex;
+  list-style: none;
+  gap: 16px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-navegacion a {
+  color: var(--color-blanco-pastel);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+}
+
+.menu-navegacion a:hover,
+.menu-navegacion a.activo {
+  color: var(--color-dorado-tierra);
+}
+
+.btn-reserva {
+  display: inline-block;
+  background-color: var(--color-dorado-tierra);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-reserva:hover {
+  background-color: #b59449;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Banner Principal
+   ========================================================================== */
 .seccion-banner-panoramas {
   position: relative;
   min-height: 450px;
@@ -37,25 +109,25 @@ h3 {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-top: 120px;
+  padding-top: 110px;
   padding-bottom: 50px;
 }
 
-.imagen-fondo-banner,
-.capa-banner {
+.imagen-fondo-banner {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-}
-
-.imagen-fondo-banner {
   object-fit: cover;
   z-index: 1;
 }
 
 .capa-banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65));
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65));
   z-index: 2;
 }
 
@@ -63,11 +135,13 @@ h3 {
   position: relative;
   z-index: 3;
   text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
 }
 
 .titulo-banner {
-  font-size: 48px;
-  margin-bottom: 15px;
+  font-size: 46px;
+  margin-bottom: 14px;
   color: var(--color-blanco-pastel);
   letter-spacing: 1px;
 }
@@ -75,14 +149,21 @@ h3 {
 .subtitulo-banner {
   font-size: 18px;
   font-weight: normal;
-  max-width: 700px;
-  margin-inline: auto;
-  line-height: 1.6;
   color: var(--color-crema-suave);
+  line-height: 1.6;
 }
 
+/* ==========================================================================
+   Sección de Panoramas (CSS Grid)
+   ========================================================================== */
 .seccion-panoramas {
   padding: 60px 0;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .cuadricula-panoramas {
@@ -107,7 +188,7 @@ h3 {
 }
 
 .contenido-tarjeta {
-  padding: 24px;
+  padding: 22px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -119,23 +200,23 @@ h3 {
   color: var(--color-dorado-tierra);
   font-size: 12px;
   text-transform: uppercase;
-  padding: 6px 12px;
+  padding: 5px 10px;
   border-radius: 6px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   align-self: flex-start;
 }
 
 .contenido-tarjeta h3 {
   font-size: 20px;
   color: var(--color-blanco-pastel);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .contenido-tarjeta p {
   font-size: 14px;
   font-weight: normal;
   color: var(--color-crema-suave);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   flex-grow: 1;
   line-height: 1.6;
 }
@@ -153,14 +234,17 @@ h3 {
   color: var(--color-dorado-tierra);
 }
 
+/* ==========================================================================
+   Pie de Página
+   ========================================================================== */
 .fondo-footer {
   background-color: var(--color-marron-oscuro);
   text-align: center;
-  padding: 20px 24px;
+  padding: 22px 20px;
 }
 
 .parrafo-footer {
-  margin-bottom: 0;
+  margin: 0;
   font-size: 14px;
   font-weight: normal;
   color: var(--color-blanco-pastel);
@@ -177,6 +261,9 @@ h3 {
   text-decoration: underline;
 }
 
+/* ==========================================================================
+   Adaptabilidad Móvil y Tablet (Media Queries)
+   ========================================================================== */
 @media (max-width: 992px) {
   .cuadricula-panoramas {
     grid-template-columns: repeat(2, 1fr);
@@ -184,13 +271,31 @@ h3 {
 }
 
 @media (max-width: 768px) {
+  .barra-navegacion {
+    position: static;
+    background-color: var(--color-marron-oscuro);
+    padding: 15px 0;
+  }
+
+  .contenedor-nav {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .menu-navegacion {
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .seccion-banner-panoramas {
-    min-height: 350px;
-    padding-top: 120px;
+    min-height: 320px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .titulo-banner {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .subtitulo-banner {
